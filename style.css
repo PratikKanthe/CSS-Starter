@@ -1,0 +1,123 @@
+@font-face {
+  font-family: kalra;
+  src: url("/fonts/Kalra.ttf");
+}
+
+:root {
+  --clr-primary: #3f3d56;
+  --clr-secondary: #cccccc;
+  --clr-font: #3f3d56;
+  --font-title: 4rem;
+  --font-subtitle: 2.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-font: #cccccc;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  /* color-scheme: light; */
+}
+
+body {
+  font-family: kalra;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+  width: min(65ch, 100% -4rem);
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+nav {
+  padding: 1rem;
+  font-size: var(--font-subtitle);
+  background: var(--clr-primary);
+  color: var(--clr-secondary);
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  height: 74svh;
+}
+
+.part1 {
+  align-self: center;
+  width: 50%;
+}
+
+.part2 {
+  padding: 15px;
+  color: var(--clr-font);
+  align-self: center;
+  width: 50%;
+}
+
+.cursor {
+  display: inline-block;
+  width: 4px;
+  height: 25px;
+  background-color: var(--clr-font);
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--clr-primary);
+  color: var(--clr-secondary);
+}
+
+@media (max-width: 992px) {
+  .part2 {
+    width: 100%;
+  }
+  .part1 {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    font-size: 2rem;
+  }
+}

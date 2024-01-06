@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Starter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="flex">
+      <h1>CSS Starter</h1>
+    </nav>
+    <section class="hero">
+      <div class="part1">
+        <img
+          src="/images/code-thinking.svg"
+          alt="code-thinking"
+          class="img-code"
+        />
+      </div>
+      <div class="part2">
+        <h2>
+          This Is <span id="typed-text"></span><span class="cursor"></span>
+        </h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          placeat dignissimos reprehenderit culpa! Vitae, veritatis.
+        </p>
+      </div>
+    </section>
+    <footer><p>&#169; Pratik Kanthe</p></footer>
+    <script>
+      const text = "CSS Boiler Plate Template";
+      let index = 0;
+
+      function type() {
+        if (index <= text.length) {
+          document.getElementById("typed-text").innerText = text.slice(
+            0,
+            index
+          );
+          index++;
+          setTimeout(type, 100);
+        } else {
+          // Typing animation complete, show cursor after 3 seconds
+          setTimeout(function () {
+            document.querySelector(".cursor").style.display = "inline";
+          }, 3000);
+        }
+      }
+
+      // Start the typing effect when the page loads
+      window.onload = function () {
+        type();
+      };
+    </script>
+  </body>
+</html>
