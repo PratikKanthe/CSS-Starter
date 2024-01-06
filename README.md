@@ -1,2 +1,2 @@
 # CSS-Starter-Template
- This is a css staring boiler plate template
+ This is a CSS staring boiler plate template
